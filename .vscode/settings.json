@@ -1,0 +1,7 @@
+{
+  // Points VS Code / Pylance at the project venv so imports resolve and the
+  // debugger uses the right interpreter. Create the venv first (see README).
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.analysis.extraPaths": ["${workspaceFolder}/.venv/lib"],
+  "python.terminal.activateEnvironment": true
+}

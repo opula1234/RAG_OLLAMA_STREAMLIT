@@ -1,0 +1,30 @@
+[project]
+name = "pdf-rag"
+version = "0.1.0"
+description = "Fully-local PDF RAG app (Ollama + ChromaDB + Streamlit)"
+requires-python = ">=3.10"
+dependencies = [
+    "streamlit>=1.39",
+    "langchain>=0.3",
+    "langchain-community>=0.3",
+    "langchain-ollama>=0.2",
+    "langchain-chroma>=0.1.4",
+    "chromadb>=0.5",
+    "pypdf>=5.0",
+    "ollama>=0.6.3",
+    "langgraph>=1.2.17",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Let tests import the top-level modules (rag_core, rag_logging) and conftest.
+pythonpath = [".", "tests"]
+addopts = "-ra"
+markers = [
+    "integration: tests that require a running Ollama (skipped if unavailable)",
+]
